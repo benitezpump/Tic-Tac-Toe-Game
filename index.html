@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="css/metro.css"/>
+    <link rel="stylesheet" href="css/custom.css"/>
+    <link href="css/metro-icons.css" rel="stylesheet">
+    <script src="js/metro.js"></script>
+    <script src="js/app.js"></script>
+
+</head>
+<body ng-app="tic-tac-toe">
+<div class="container" ng-controller="TicCtrl as Ctrl">
+    <table ng-show="Ctrl.playerSelector">
+        <tr>
+            <th colspan="2px">Selecciona Tu Marca</th>
+
+        </tr>
+        <tr>
+            <td>
+                <div class="tile-small bg-cyan" ng-click="Ctrl.setPlayer('X')"><h1>X</h1></div>
+            </td>
+            <td>
+                <div class="tile-small bg-orange" ng-click="Ctrl.setPlayer('O')"><h1>O</h1></div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="bg-black" ng-show="Ctrl.visible">
+        <tr>
+            <td class="tile-small bg-white" ng-click="Ctrl.logica(0)" ng-class="{'bg-green': Ctrl.victoria[0]}"><h1>{{Ctrl.posiciones[0]}}</h1></td>
+            <td class="tile-small bg-white" ng-click="Ctrl.logica(1)" ng-class="{'bg-green': Ctrl.victoria[1]}"><h1>{{Ctrl.posiciones[1]}}</h1></td>
+            <td class="tile-small bg-white" ng-click="Ctrl.logica(2)" ng-class="{'bg-green': Ctrl.victoria[2]}"><h1>{{Ctrl.posiciones[2]}}</h1></td>
+        </tr>
+        <tr>
+            <td class="tile-small bg-white" ng-click="Ctrl.logica(3)" ng-class="{'bg-green': Ctrl.victoria[3]}"><h1>{{Ctrl.posiciones[3]}}</h1></td>
+            <td class="tile-small bg-white" ng-click="Ctrl.logica(4)" ng-class="{'bg-green': Ctrl.victoria[4]}"><h1>{{Ctrl.posiciones[4]}}</h1></td>
+            <td class="tile-small bg-white" ng-click="Ctrl.logica(5)" ng-class="{'bg-green': Ctrl.victoria[5]}"><h1>{{Ctrl.posiciones[5]}}</h1></td>
+        </tr>
+        <tr>
+            <td class="tile-small bg-white" ng-click="Ctrl.logica(6)" ng-class="{'bg-green': Ctrl.victoria[6]}"><h1>{{Ctrl.posiciones[6]}}</h1></td>
+            <td class="tile-small bg-white" ng-click="Ctrl.logica(7)" ng-class="{'bg-green': Ctrl.victoria[7]}"><h1>{{Ctrl.posiciones[7]}}</h1></td>
+            <td class="tile-small bg-white" ng-click="Ctrl.logica(8)" ng-class="{'bg-green': Ctrl.victoria[8]}"><h1>{{Ctrl.posiciones[8]}}</h1></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
